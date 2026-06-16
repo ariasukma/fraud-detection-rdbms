@@ -22,7 +22,7 @@ DB_TYPE=postgres
 
 ## Dashboard Preview
 
-![Fraud Detection Dashboard](blob/main/docs/images/dashboard.png)
+![Fraud Detection Dashboard](docs/images/dashboard.png)
 
 ## Run
 
