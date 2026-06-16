@@ -119,6 +119,7 @@ It inserts one `PENDING` transaction every second. The predictor service reads u
 ## Author
 
 **Aria Sukma**
+
 Fraud Detection RDBMS is an open-source real-time fraud detection platform supporting PostgreSQL, CockroachDB, MySQL, Oracle, and SQL Server.
 
 ### Maintainer
