@@ -115,3 +115,18 @@ It inserts one `PENDING` transaction every second. The predictor service reads u
 - `GET /api/fraud-timeseries`
 - `GET /api/fraud-types`
 - `GET /api/model-metrics`
+
+## Author
+
+**Aria Sukma**
+Fraud Detection RDBMS is an open-source real-time fraud detection platform supporting PostgreSQL, CockroachDB, MySQL, Oracle, and SQL Server.
+
+### Maintainer
+
+Aria Sukma
+
+* GitHub: https://github.com/ariasukma/fraud-detection-rdbms/
+
+### License
+
+This project is licensed under the Apache License 2.0.

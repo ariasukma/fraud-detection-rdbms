@@ -46,7 +46,7 @@ export default function App() {
       <header className="topbar">
         <div>
           <h1>Fraud Detection</h1>
-          <p>Realtime RDBMS monitoring dashboard</p>
+          <p>Realtime RDBMS monitoring dashboard | by ariasukma | MII</p>
         </div>
         <div className="status-pill">
           {error ? 'API error' : `Updated ${lastUpdated ? lastUpdated.toLocaleTimeString() : '--:--:--'}`}
@@ -60,6 +60,11 @@ export default function App() {
         <ModelMetricsCard metrics={data.metrics} />
       </section>
       <LatestTransactionsTable rows={data.latest} />
+
+      {/* Footer */}
+      <footer className="footer1">
+        Fraud Detection RDBMS © 2026 Aria Sukma
+      </footer>
     </main>
   );
 }
