@@ -1,0 +1,40 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Build
+dist/
+build/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ML Artifacts
+ml-service/models/*.pkl
+ml-service/models/*.joblib
+models/fraud_model.pkl
+models/model_metrics.json
+
+# Generated metrics
+ml-service/models/model_metrics.json

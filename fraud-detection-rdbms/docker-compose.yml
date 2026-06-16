@@ -1,0 +1,83 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: fraud-postgres
+    environment:
+      POSTGRES_DB: fraud_db
+      POSTGRES_USER: fraud_user
+      POSTGRES_PASSWORD: fraud_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  #cockroachdb:
+  #  image: cockroachdb/cockroach:latest
+  #  container_name: fraud-cockroachdb
+  #  command: start-single-node --insecure
+  #  ports:
+  #    - "26257:26257"
+  #    - "8080:8080"
+  #  volumes:
+  #    - cockroach_data:/cockroach/cockroach-data
+
+  #cockroachdb-init:
+  #  image: cockroachdb/cockroach:latest
+  #  depends_on:
+  #    - cockroachdb
+  #  entrypoint: /bin/sh
+  #  command: -c "until cockroach sql --insecure --host=cockroachdb:26257 -e 'CREATE DATABASE IF NOT EXISTS fraud_db; CREATE USER IF NOT EXISTS fraud_user; GRANT ALL ON DATABASE fraud_db TO fraud_user;'; do sleep 2; done"
+  #  restart: "no"
+
+  #mysql:
+  #  image: mysql:8
+  #  container_name: fraud-mysql
+  #  environment:
+  #    MYSQL_DATABASE: fraud_db
+  #    MYSQL_USER: fraud_user
+  #    MYSQL_PASSWORD: fraud_password
+  #    MYSQL_ROOT_PASSWORD: root_password
+  #  ports:
+  #    - "3306:3306"
+  #  volumes:
+  #    - mysql_data:/var/lib/mysql
+
+  #oracle:
+  #  image: gvenzl/oracle-free:latest
+  #  container_name: fraud-oracle
+  #  environment:
+  #    ORACLE_PASSWORD: root_password
+  #    APP_USER: fraud_user
+  #    APP_USER_PASSWORD: fraud_password
+  #  ports:
+  #    - "1521:1521"
+  #  volumes:
+  #    - oracle_data:/opt/oracle/oradata
+
+  #sqlserver:
+  #  image: mcr.microsoft.com/mssql/server:2022-latest
+  #  container_name: fraud-sqlserver
+  #  environment:
+  #    ACCEPT_EULA: "Y"
+  #    SA_PASSWORD: "FraudPassword123!"
+  #  ports:
+  #    - "1433:1433"
+  #  volumes:
+  #    - sqlserver_data:/var/opt/mssql
+
+  #sqlserver-init:
+  #  image: mcr.microsoft.com/mssql-tools
+  #  depends_on:
+  #    - sqlserver
+  #  volumes:
+  #    - ./docker/mssql/init.sql:/init.sql:ro
+  #  entrypoint: /bin/bash
+  #  command: -c "until /opt/mssql-tools/bin/sqlcmd -S sqlserver -U sa -P 'FraudPassword123!' -Q 'SELECT 1'; do sleep 2; done && /opt/mssql-tools/bin/sqlcmd -S sqlserver -U sa -P 'FraudPassword123!' -i /init.sql"
+  #  restart: "no"
+
+volumes:
+  postgres_data:
+  #cockroach_data:
+  #mysql_data:
+  #oracle_data:
+  #sqlserver_data:

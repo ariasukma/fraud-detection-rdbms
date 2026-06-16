@@ -1,0 +1,20 @@
+{
+  "name": "fraud-detection-data-loader",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "node generate_initial_data.js",
+    "realtime": "node realtime_transaction_generator.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.0.0",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.11.0",
+    "oracledb": "^6.6.0",
+    "pg": "^8.12.0",
+    "mssql": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
